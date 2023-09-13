@@ -1,0 +1,152 @@
+
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,12pt,twocolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} % loads  TikZ and tkz-base
+\usepackage{listings}
+%
+%\usepackage{setspace}
+%\usepackage{gensymb}
+%\doublespacing
+%\singlespacing
+
+%\usepackage{graphicx}
+%\usepackage{amssymb}
+%\usepackage{relsize}
+%\usepackage[cmex10]{amsmath}
+%\usepackage{amsthm}
+%\interdisplaylinepenalty=2500
+%\savesymbol{iint}
+%\usepackage{txfonts}
+%\restoresymbol{TXF}{iint}
+%\usepackage{wasysym}
+%\usepackage{amsthm}
+%\usepackage{iithtlc}
+%\usepackage{mathrsfs}
+%\usepackage{txfonts}
+%\usepackage{stfloats}
+%\usepackage{bm}
+%\usepackage{cite}
+%\usepackage{cases}
+%\usepackage{subfig}
+%\usepackage{xtab}
+%\usepackage{longtable}
+%\usepackage{multirow}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+%\usepackage{enumitem}
+%\usepackage{mathtools}
+%\usepackage{tikz}
+%\usepackage{circuitikz}
+%\usepackage{verbatim}
+%\usepackage{tfrupee}
+%\usepackage{stmaryrd}
+%\usetkzobj{all}
+%    \usepackage{color}                                            %%
+%    \usepackage{array}                                            %%
+%    \usepackage{longtable}                                        %%
+%    \usepackage{calc}                                             %%
+%    \usepackage{multirow}                                         %%
+%    \usepackage{hhline}                                           %%
+%    \usepackage{ifthen}                                           %%
+  %optionally (for landscape tables embedded in another document): %%
+%    \usepackage{lscape}     
+%\usepackage{multicol}
+%\usepackage{chngcntr}
+%\usepackage{enumerate}
+
+%\usepackage{wasysym}
+%\documentclass[conference]{IEEEtran}
+%\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+%\newtheorem{thm}{Theorem}[section] 
+%\newtheorem{defn}[thm]{Definition}
+%\newtheorem{algorithm}{Algorithm}[section]
+%\newtheorem{cor}{Corollary}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+%\bibliographystyle{ieeetr}
+\begin{document}
+%
+
+\bibliographystyle{IEEEtran}
+
+
+\vspace{3cm}
+
+\title{
+Question 10.13.3.26
+}
+\author{Umair Parwez - EE22BTECH11054}	
+
+\maketitle
+
+\newpage
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+
+
+\textbf{Question:} Two dice are thrown at the same time. Determine the probabiity that the difference
+of the numbers on the two dice is 2. 
+\\
+\\
+\textbf{Solution:}
+Let X and Y represent the two dice.
+Now, the PMF of X and Y are,
+\begin{align}
+	P_X(m) &= \frac{1}{6}, (0<m<7) \\
+  &= 0, \text{otherwise} \\
+  P_Y(m) &= \frac{1}{6}, (0<m<7) \\
+  &= 0, \text{otherwise}
+\end{align}
+
+Let Z = X-Y. The PMF of Z is,
+\begin{align}
+  P_Z(k) &= P(Z=k)\\
+  &= P(X-Y=k)\\
+  &= P(X=k+Y)\\
+  &= P_X(k+Y)\\
+  &= \sum_{m=1}^{6} P_X(k+m)P_Y(m)\\
+  &= \frac{1}{6} \sum_{m=1}^{6} P_X(k+m) \label{PMFZ}
+\end{align}
+Now,let E be the event that the difference of the two dice is 2. Then,
+\begin{align}
+  P(E) = P_Z(-2) + P_Z(2) 
+\end{align}
+Substituting $\eqref{PMFZ}$, 
+\begin{align}
+  P(E) &= \frac{1}{6} \sum_{m=1}^{6} P_X(m-2) + \frac{1}{6} \sum_{m=1}^{6} P_X(m+2)\\
+  &= \frac{1}{6} \cdot \frac{2}{3} + \frac{1}{6} \cdot \frac{2}{3}\\
+  &= \frac{2}{9}
+\end{align}
+
+
+\end{document}
